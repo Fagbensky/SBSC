@@ -1,0 +1,21 @@
+<mat-toolbar class="navbarContainer">
+  <mat-toolbar-row mat-elevation-z10>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button *ngIf="isAuthenticated" mat-icon-button class="sidenav-toggle" (click)="toggleSidenav.emit()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div *ngIf="isAuthenticated" class="navList">
+      <a mat-list-item routerLink="/account" routerLinkActive="currentLink"><span>
+          Account Profile
+        </span> </a>
+      <a mat-list-item routerLink="/users" routerLinkActive="currentLink">
+        <span>
+          Users
+        </span> </a>
+      <a mat-list-item routerLink="/location" routerLinkActive="currentLink"><span>
+          Current Location
+        </span> </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

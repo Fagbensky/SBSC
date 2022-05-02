@@ -1,0 +1,27 @@
+.navbarContainer{
+    @apply fixed top-0 z-40 h-14;
+}
+
+.sidenav-toggle{
+    @apply flex items-center justify-center;
+    @apply md:hidden md:min-w-[56px] md:p-0 md:m-[8px]; 
+    mat-icon{
+        @apply text-[30px] h-[56px] w-[56px] leading-[56px] text-black;
+    }
+}
+
+.currentLink {
+    @apply border-b-2 border-[#3f51b5] bg-gray-200;
+}
+
+.example-spacer{
+    @apply flex-auto;
+}
+
+.navList{
+    @apply flex-row space-x-4 hidden md:flex text-sm text-[#3f51b5] h-full items-center;
+    
+    a{
+        @apply px-3 h-full flex items-center;
+    }
+}

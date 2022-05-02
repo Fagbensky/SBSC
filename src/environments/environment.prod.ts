@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  api_url: 'https://reqres.in/api',
+  maps_key: "AIzaSyDpSEtukymsdmqJKzyMlBGMAo0p56eJ-ks"
 };

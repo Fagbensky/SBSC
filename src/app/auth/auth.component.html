@@ -1,0 +1,117 @@
+<div class="loginPage">
+  <div class="loginDetails">
+    <h2>{{ title }}</h2>
+    <form class="example-container" [formGroup]="authForm">
+      <mat-form-field appearance="outline" *ngIf="authType === 'register'" class="formField">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="first_name" />
+        <mat-error *ngIf="(authForm.get('first_name')!.errors?.['required'] &&
+                  (authForm.get('first_name')!.touched ||
+                    authForm.get('first_name')!.dirty))
+                ">
+          Input your First Name.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="authType === 'register'" class="formField">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="last_name" />
+        <mat-error *ngIf="(authForm.get('last_name')!.errors?.['required'] &&
+                  (authForm.get('last_name')!.touched ||
+                    authForm.get('last_name')!.dirty))
+                ">
+          Input your Last Name.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="authType === 'register'" class="formField">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address" />
+        <mat-error *ngIf="(authForm.get('address')!.errors?.['required'] &&
+                  (authForm.get('address')!.touched ||
+                    authForm.get('address')!.dirty))
+                ">
+          Input your Address.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="authType === 'register'" class="formField">
+        <mat-label>Occupation</mat-label>
+        <input matInput formControlName="job" />
+        <mat-error *ngIf="(authForm.get('job')!.errors?.['required'] &&
+                  (authForm.get('job')!.touched ||
+                    authForm.get('job')!.dirty))
+                ">
+          Input your Occupation.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="authType === 'register'" class="formField">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phone_number" />
+        <mat-error *ngIf="(authForm.get('phone_number')!.errors?.['required'] &&
+                        (authForm.get('phone_number')!.touched ||
+                          authForm.get('phone_number')!.dirty))
+                      ">
+          Input your Occupation.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="formField">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error *ngIf="(authForm.get('email')!.errors?.['required'] &&
+                  (authForm.get('email')!.touched ||
+                    authForm.get('email')!.dirty))
+                ">
+          Input your Email.</mat-error>
+        <mat-error *ngIf="(authForm.get('email')!.errors?.['email'] &&
+                  (authForm.get('email')!.touched ||
+                    authForm.get('email')!.dirty))
+                ">
+          Input a valid Email.</mat-error>
+      </mat-form-field>
+      <div formGroupName="passwordGroup">
+        <mat-form-field appearance="outline" class="formField">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" />
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="(authForm.get('passwordGroup.password')!.errors?.['required'] &&
+                          (authForm.get('passwordGroup.password')!.touched ||
+                            authForm.get('passwordGroup.password')!.dirty))
+                        ">
+            Input your Password.</mat-error>
+          <mat-error *ngIf="(authForm.get('passwordGroup.password')!.errors?.['minlength'] &&
+                          (authForm.get('passwordGroup.password')!.touched ||
+                            authForm.get('passwordGroup.password')!.dirty))
+                        ">
+            Password cannot be less than eight characters.</mat-error>
+          <mat-error *ngIf="(authForm.get('passwordGroup.password')!.errors?.['pattern'] &&
+                          (authForm.get('passwordGroup.password')!.touched ||
+                            authForm.get('passwordGroup.password')!.dirty))
+                        ">
+            Password must contain at least 1 uppercase, 1 lowercase, 1 number and
+            1 special character</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" *ngIf="authType === 'register'" class="formField">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput formControlName="password_confirmation" [type]="hide ? 'password' : 'text'" />
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="(authForm.get('passwordGroup.password_confirmation')!.errors?.['required'] &&
+                          (authForm.get('passwordGroup.password_confirmation')!.touched ||
+                            authForm.get('passwordGroup.password_confirmation')!.dirty))
+                        ">
+            Confirm your Password.</mat-error>
+          <mat-error
+            *ngIf="authForm.get('passwordGroup')!.errors?.['match'] && !(authForm.get('passwordGroup.password_confirmation')!.errors?.['required'])">
+            Password must match.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="buttonAlignment">
+        <div *ngIf="authType === 'register'" class="routes">
+          Already have an account?
+          <a [routerLink]="['/login']" class="smallRoute">Login</a>
+        </div>
+        <div *ngIf="authType === 'login'" class="routes">
+          Don't have an account?
+          <a [routerLink]="['/register']" class="smallRoute">Sign Up</a>
+        </div>
+        <button mat-raised-button [disabled]="authForm.invalid" color="primary" type="button" (click)="submitForm()">
+          {{ authType }}
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="background"></div>
+</div>

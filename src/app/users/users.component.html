@@ -1,0 +1,25 @@
+<div class="container px-5 mx-auto">
+  <header class="flex flex-row items-center justify-between mt-10">
+    <h2 class="m-0 text-2xl font-bold">Users</h2>
+    <button mat-raised-button color="primary" class="text-sm py-2" [routerLink]="['0', 'edit']">
+      Create new User
+    </button>
+  </header>
+  <div class="" *ngIf="pageData$ |async as Users">
+    <div class="" *ngFor="let user of Users; let i=index ">
+      <app-user [imgSrs]="user.avatar" [firstName]="user.first_name" [lastName]="user.last_name" [job]="user.job"
+        [id]="user.id" [email]="user.email" *ngIf="i<11"></app-user>
+    </div>
+    <div class="flex justify-between items-center mb-6">
+      <button mat-button type="button" color="primary" [disabled]="currentPage== 0" (click)="prevPage()">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <div>
+        {{currentPage + 1}}
+      </div>
+      <button mat-button type="button" color="primary" [disabled]="currentPage+1 > lastPage-1" (click)="nextPage()">
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

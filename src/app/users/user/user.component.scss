@@ -1,0 +1,11 @@
+.userContainer{
+    @apply flex flex-row items-center my-3;
+}
+
+.edit{
+    @apply text-[#3f51b5];
+}
+
+.delete{
+    @apply text-red-700;
+}

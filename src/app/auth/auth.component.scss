@@ -1,0 +1,31 @@
+.loginPage{
+    @apply mx-auto flex flex-col-reverse items-center ;
+    @apply md:flex-row;
+}
+
+.loginDetails{
+    @apply flex justify-center items-center flex-col mt-16;
+    @apply md:w-1/2 md:mt-0;
+    height: calc(100vh - 3.5rem);
+}
+
+.buttonAlignment{
+    @apply flex justify-between items-center gap-x-2 mb-10;
+}
+
+.routes{
+    @apply text-xs;
+}
+
+.smallRoute{
+    @apply text-blue-500 hover:underline active:text-blue-700;
+}
+
+.background{
+    @apply hidden md:block bg-[url('../../assets/img/abstract-techn.jpg')] bg-cover bg-center bg-no-repeat bg-red-700 w-[50vw] absolute left-1/2;
+    height: calc(100vh - 3.5rem);
+}
+
+.formField{
+    @apply block;
+}

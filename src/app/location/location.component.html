@@ -1,0 +1,18 @@
+<div class="containers">
+
+    <!-- google-maps-demo.component.html -->
+    <google-map *ngIf="loc" height="70vh" width="85vw" [center]="center" [zoom]="zoom" (mapClick)="moveMap($event)"
+        (mapMousemove)="move($event)">
+        <map-marker [position]="position" [title]="title" [options]="option">
+        </map-marker>
+    </google-map>
+    <p>
+        <span class="font-bold">Longitude</span> {{ longitude }}
+    </p>
+    <p>
+        <span class="font-bold">Latitude</span> {{ latitude }}
+    </p>
+
+
+
+</div>

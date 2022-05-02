@@ -1,0 +1,23 @@
+.app-sidenav-container {
+    @apply flex-1 fixed w-screen min-w-full h-screen min-h-full;
+}
+
+.app-sidenav-content {
+    @apply flex h-full flex-col;
+}
+
+.currentLink{
+    @apply border-l-2 border-[#3f51b5] bg-gray-100;
+}
+
+.app-sidenav {
+    @apply min-w-[20rem];
+}
+
+.navItem{
+    @apply flex flex-row items-center text-center text-sm my-3;
+
+    span{
+        @apply ml-2;
+    }
+}

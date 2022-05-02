@@ -1,0 +1,16 @@
+.editUserForm{
+    @apply flex justify-center items-center flex-col;
+    height: calc(100vh - 3.5rem);
+}
+
+.example-container{
+    @apply md:w-3/4 lg:w-1/2;
+}
+
+.buttonAlignment {
+    @apply flex justify-between items-center gap-x-2;
+}
+
+.formField {
+    @apply block mb-4;
+}

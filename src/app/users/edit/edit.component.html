@@ -1,0 +1,74 @@
+<div class="editUserForm">
+    <h2>{{title}}</h2>
+    <form class="example-container" [formGroup]="editForm">
+        <mat-form-field appearance="outline" class="formField">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="first_name" />
+            <mat-error *ngIf="(editForm.get('first_name')!.errors?.['required'] &&
+                  (editForm.get('first_name')!.touched ||
+                    editForm.get('first_name')!.dirty))
+                ">
+                Input your First Name.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="formField">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="last_name" />
+            <mat-error *ngIf="(editForm.get('last_name')!.errors?.['required'] &&
+                  (editForm.get('last_name')!.touched ||
+                    editForm.get('last_name')!.dirty))
+                ">
+                Input your Last Name.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="formField">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" />
+            <mat-error *ngIf="(editForm.get('address')!.errors?.['required'] &&
+                  (editForm.get('address')!.touched ||
+                    editForm.get('address')!.dirty))
+                ">
+                Input your Address.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="formField">
+            <mat-label>Phone Number</mat-label>
+            <input matInput formControlName="phone_number" />
+            <mat-error *ngIf="(editForm.get('phone_number')!.errors?.['required'] &&
+                          (editForm.get('phone_number')!.touched ||
+                            editForm.get('phone_number')!.dirty))
+                        ">
+                Input your Address.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="formField">
+            <mat-label>Occupation</mat-label>
+            <input matInput formControlName="job" />
+            <mat-error *ngIf="(editForm.get('job')!.errors?.['required'] &&
+                  (editForm.get('job')!.touched ||
+                    editForm.get('job')!.dirty))
+                ">
+                Input your Occupation.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="formField">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+            <mat-error *ngIf="(editForm.get('email')!.errors?.['required'] &&
+                  (editForm.get('email')!.touched ||
+                    editForm.get('email')!.dirty))
+                ">
+                Input your Email.</mat-error>
+            <mat-error *ngIf="(editForm.get('email')!.errors?.['email'] &&
+                  (editForm.get('email')!.touched ||
+                    editForm.get('email')!.dirty))
+                ">
+                Input a valid Email.</mat-error>
+        </mat-form-field>
+        <div class="buttonAlignment">
+            <button mat-raised-button [disabled]="editForm.invalid" color="primary" type="button"
+                (click)="submitForm()">
+                Submit
+            </button>
+            <button mat-raised-button color="warn" type="button"
+                (click)="showSnackbarAction('Are you sure you want to dismiss all changes','Ok')">
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>
