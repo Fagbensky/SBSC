@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, catchError, EMPTY, filter, map, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, catchError, EMPTY, filter, map, switchMap, take, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { singleUser, singleUserApi, usersList } from '../models/users';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, take } from 'rxjs';
 import { UsersService } from '../core/services/users.service';
 
 @Component({
@@ -35,21 +35,21 @@ export class UsersComponent implements OnInit {
     }
     )
 
-    setTimeout(() => {
-      if (this.userService.done) {
+    if (this.userService.done) {
+      setTimeout(() => {
         this.userService.done = false;
-        this.userService._page$.next('2')
-      }
-    }, 10000);
-    this.userService.LoadUsersPerPage$.subscribe()
+        this.userService._page$.next('2');
+      }, 10000);
+      this.userService.LoadUsersPerPage$.subscribe();
+    }
   }
 
   ngOnDestroy(): void {
-    this.userService.LoadUsersPerPage$.subscribe().unsubscribe();
   }
 
   nextPage() {
     this.currentPage++;
+
     this._pageData$.next(this.allUserData.slice(this.currentPage * this.maxItem, ((this.currentPage + 1) * this.maxItem)));
   }
 
