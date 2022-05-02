@@ -26,7 +26,7 @@
       <router-outlet></router-outlet>
     </div>
     <div *ngIf="isAuthenticated"
-      class="flex flex-row bg-gray-800 text-white absolute bottom-0 left-0 items-center w-screen md:w-[50vw] h-12 text-sm md:rounded-tr-lg px-2 justify-between">
+      class="flex flex-row bg-gray-800 text-white fixed bottom-0 left-0 items-center w-screen md:w-[50vw] h-12 text-sm md:rounded-tr-lg px-2 justify-between">
       <p class="m-0">
         Time till automatic signout <span class="font-bold text-[]">{{timer$| async | time}}</span>
       </p>

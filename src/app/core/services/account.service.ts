@@ -108,11 +108,14 @@ export class AccountService {
 
   // Update the user on the server (email, pass, etc)
   update(user: AccountResponse): any {
-    return this.http.put<AccountResponse>(`${environment.api_url}/users/${user.id}`, user)
+    this.http.put<AccountResponse>(`${environment.api_url}/users/${user.id}`, user)
       .pipe(
         tap(data => {
           this.currentUserSubject.next(data);
         }))
       .subscribe();
+
+    this.currentUserSubject.next(user);
+    this.router.navigate(['/account']);
   }
 }

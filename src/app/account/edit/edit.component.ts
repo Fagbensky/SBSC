@@ -51,12 +51,12 @@ export class EditComponent implements OnInit {
       duration: this.snackBarDurationInSeconds * 1000,
     });
     snack.onAction().subscribe(() => {
-      this.router.navigate(['/users'])
+      this.router.navigate(['/account'])
     });
   }
 
   submitForm() {
-
+    this.accountService.update(this.editForm.value);
   }
 
 }
