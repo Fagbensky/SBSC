@@ -1,10 +1,10 @@
 .editUserForm{
-    @apply flex justify-center items-center flex-col;
+    @apply flex py-10 items-center flex-col;
     height: calc(100vh - 3.5rem);
 }
 
 .example-container{
-    @apply md:w-3/4 lg:w-1/2;
+    @apply md:w-3/4 lg:w-1/2 pb-16;
 }
 
 .buttonAlignment {
