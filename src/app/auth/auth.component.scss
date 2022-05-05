@@ -1,12 +1,11 @@
 .loginPage{
-    @apply mx-auto flex flex-col-reverse items-center ;
+    @apply mx-auto flex flex-col-reverse items-center md:h-screen;
     @apply md:flex-row;
 }
 
 .loginDetails{
-    @apply flex  items-center flex-col py-16;
+    @apply flex justify-items-center items-center flex-col py-16;
     @apply md:w-1/2 md:mt-0;
-    height: calc(100vh - 3.5rem);
 }
 
 .buttonAlignment{
@@ -23,7 +22,7 @@
 
 .background{
     @apply hidden md:block bg-[url('../../assets/img/abstract-techn.jpg')] bg-cover bg-center bg-no-repeat bg-red-700 w-[50vw] fixed left-1/2;
-    height: calc(100vh - 3.5rem);
+    height: 100vh;
 }
 
 .formField{

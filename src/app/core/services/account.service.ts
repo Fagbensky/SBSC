@@ -70,7 +70,7 @@ export class AccountService {
           tap(data => {
             this.setAuth(data);
             this.timer$ = timer(0, 1000).pipe(
-              scan(acc => --acc, 600),
+              scan(acc => --acc, 10),
               takeWhile(x => x >= 0)
             )
           }),

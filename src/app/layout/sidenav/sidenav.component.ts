@@ -14,6 +14,7 @@ export class SidenavComponent implements OnInit {
   timer$ = this.accountService.timer$?.pipe(
     tap(x => {
       if (x < 1) {
+        alert('Your session has expired. Please login again.');
         this.accountService.purgeAuth()
       }
     })

@@ -1,7 +1,7 @@
 <div class="containers">
 
     <!-- google-maps-demo.component.html -->
-    <google-map *ngIf="loc" height="70vh" width="85vw" [center]="center" [zoom]="zoom" (mapClick)="moveMap($event)"
+    <google-map *ngIf="loc" height="65vh" width="85vw" [center]="center" [zoom]="zoom" (mapClick)="moveMap($event)"
         (mapMousemove)="move($event)">
         <map-marker [position]="position" [title]="title" [options]="option">
         </map-marker>

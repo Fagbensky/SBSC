@@ -1,4 +1,4 @@
 .containers {
   @apply flex justify-center items-center flex-col;
-  height: calc(100vh - 3.5rem);
+  height: calc((var(--vh, 1vh) * 100) - 3.5rem);
 }
